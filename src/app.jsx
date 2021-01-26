@@ -1,8 +1,13 @@
 import React from "react";
-import "./app.css";
+import styles from"./app.module.css";
+import Rogin from './components/login/login';
 
 function App() {
-  return <h1>Hello :)</h1>;
+  return (
+    <section className={styles.container}>
+      <Rogin/>
+    </section>
+  );
 }
 
 export default App;
