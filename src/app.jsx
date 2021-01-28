@@ -1,11 +1,12 @@
 import React from "react";
 import styles from"./app.module.css";
-import Rogin from './components/login/login';
+import Login from './components/login/login';
 
-function App() {
+function App( { authService } ) {
+
   return (
     <section className={styles.container}>
-      <Rogin/>
+      <Login authService={authService}/>
     </section>
   );
 }

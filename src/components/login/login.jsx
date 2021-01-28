@@ -1,21 +1,32 @@
 import React from 'react';
 import styles from './login.module.css';
+import Header from '../header/header';
+import Footer from '../footer/footer';
 
-function Login(props) {
+function Login({ authService }) {
+
+    const onLogin = (event) => {
+        authService//
+        .login(event.currentTarget.textContent)//
+        .then(console.log);
+    }
 
     return (
-        <article className={styles.login}>
-            <header className={styles.header}>
-                <div className={styles.logo}>
-                    <img src="./images/logo.png" alt="logo"/>
-                </div>
-                <h1>Buisness Card Maker</h1>
-            </header>
-            <div className={styles.middle}>
+        <section className={styles.login}>
+            <Header/>
+            <section className={styles.middle}>
                 <h1 className={styles.middleTitle}>Login</h1>
-            </div>
-            <footer className={styles.footer}>Code Your Dream</footer>
-        </article>
+                <ul>
+                    <li>
+                        <button onClick={ onLogin }>Google</button>
+                    </li>
+                    <li>
+                        <button onClick={ onLogin }>Github</button>
+                    </li>
+                </ul>
+            </section>
+            <Footer/>
+        </section>
     );
 }
 
