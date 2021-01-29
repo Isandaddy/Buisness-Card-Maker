@@ -1,5 +1,18 @@
+@value makerGreen from '../../common/colors.css';
+
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  background-color: makerGreen;
+}
+
+img {
+  width: 3em;
+}
+.logout {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  font-size: 0.5em;
 }

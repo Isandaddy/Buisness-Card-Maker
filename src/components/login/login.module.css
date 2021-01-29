@@ -1,36 +1,49 @@
-@value makerGreen from '../../common/colors.css';
-@value makerWhite from '../../common/colors.css';
-@value makerBlack from '../../common/colors.css';
+@value makerGreen, makerWhite, makerBlack, makerLightPink from '../../common/colors.css';
 
 h1 {
   color: makerWhite;
-  margin: 0;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+button {
+  width: 95%;
+  height: 2em;
+  outline: 0;
+  margin: 0.1rem;
+  background-color: transparent;
+  border: 2px solid makerGreen;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: makerLightPink;
 }
 
 .login {
+  width: 30em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: makerGreen;
+  justify-content: center;
+  background-color: makerWhite;
 }
 
 .middle {
-  background-color: makerWhite;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .middleTitle {
   color: makerBlack;
-}
-
-.authGoogle {
-  border: 1px solid makerGreen;
-  border-radius: 10px;
-  width: 90%;
-  margin: 0.5rem 0;
-  text-align: center;
-  cursor: pointer;
 }

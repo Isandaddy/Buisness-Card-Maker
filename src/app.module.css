@@ -1,6 +1,14 @@
-.container {
+@value makerGray from './common/colors.css';
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
   display: flex;
-  height: 800px;
+  width: 100%;
+  height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: makerGray;
 }

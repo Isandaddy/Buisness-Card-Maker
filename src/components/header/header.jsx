@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './header.module.css';
 
-const Header = (props) => {
+const Header = ({onLogout}) => {
     
     return (
         <header className={styles.header}>
+            {onLogout && <button className={styles.logout} onLogout={onLogout}>Logout</button>}
             <div className={styles.logo}>
                 <img src="./images/logo.png" alt="logo"/>
             </div>

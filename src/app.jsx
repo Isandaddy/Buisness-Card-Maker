@@ -5,9 +5,9 @@ import Login from './components/login/login';
 function App( { authService } ) {
 
   return (
-    <section className={styles.container}>
+    <div className={styles.app}>
       <Login authService={authService}/>
-    </section>
+    </div>
   );
 }
 
