@@ -10,4 +10,7 @@
 例) login の中に header footer が component 状態で含めるようにすること
 
 - .env は最上位フォルダ配下に位置すること
-- インスタンス化した firebase の用いて認証まで
+- インスタンス化した firebase の用いて認証まで  
+
+
+20210129 login 画面 css 追加
