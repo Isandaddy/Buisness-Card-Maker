@@ -2,6 +2,10 @@ import React from 'react';
 import styles from './login.module.css';
 import Header from '../header/header';
 import Footer from '../footer/footer';
+import {
+    Link
+  } from "react-router-dom";
+
 
 function Login({ authService }) {
 
@@ -18,7 +22,9 @@ function Login({ authService }) {
                 <h1 className={styles.middleTitle}>Login</h1>
                 <ul>
                     <li>
-                        <button onClick={ onLogin }>Google</button>
+                        <Link to='/app'>
+                            <button onClick={ onLogin }>Google</button>
+                        </Link>
                     </li>
                     <li>
                         <button onClick={ onLogin }>Github</button>
