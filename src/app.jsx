@@ -12,16 +12,18 @@ import {
 function App( { authService } ) {
 
   return (
-    <Router>
-      <div className={styles.app}>
-        <Login authService={authService}/>
-      </div>
-      <Switch>
-            <Route path='/app'>
-                <Main/>
-            </Route>
+    <div className={styles.app}>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Login authService={authService}/>
+          </Route>
+          <Route path='/main'>
+              <Main authService={authService}/>
+          </Route>
         </Switch>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

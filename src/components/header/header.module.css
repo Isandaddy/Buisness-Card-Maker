@@ -1,4 +1,4 @@
-@value makerGreen from '../../common/colors.css';
+@value makerGreen, makerWhite from '../../common/colors.css';
 
 .header {
   width: 100%;
@@ -19,4 +19,9 @@ img {
   top: 0.5em;
   right: 1em;
   font-size: 0.5em;
+  outline: 0;
+  margin: 0.1rem;
+  background-color: transparent;
+  border: 2px solid makerWhite;
+  border-radius: 10px;
 }

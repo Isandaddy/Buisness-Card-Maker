@@ -5,7 +5,7 @@ const Header = ({onLogout}) => {
     
     return (
         <header className={styles.header}>
-            {onLogout && <button className={styles.logout} onLogout={onLogout}>Logout</button>}
+            {onLogout && <button className={styles.logout} onClick={onLogout}>Logout</button>}
             <div className={styles.logo}>
                 <img src="./images/logo.png" alt="logo"/>
             </div>

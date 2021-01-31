@@ -17,7 +17,7 @@ li {
   margin-bottom: 0.5em;
 }
 
-button {
+.loginButton {
   width: 95%;
   height: 2em;
   outline: 0;
