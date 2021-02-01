@@ -1,1 +1,27 @@
+@value makerWhite from '../../common/colors.css';
+@value mediaQuery from '../../common/size.css';
 
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  width: 100%;
+}
+
+.mainContain {
+  background-color: makerWhite;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .mainContain {
+    display: flex;
+    flex-direction: column;
+  }
+}

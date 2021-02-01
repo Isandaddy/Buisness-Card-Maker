@@ -1,0 +1,12 @@
+@value makerGreen from '../../common/colors.css';
+
+.preview {
+  flex-grow: 1;
+  text-align: center;
+  border-left: 0.1em solid makerGreen;
+}
+
+.title {
+  margin-bottom: 1em;
+  color: makerGreen;
+}
