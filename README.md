@@ -15,7 +15,7 @@
 
 20210129 login 画面 css 追加  
 20210130 react-router テスト適用  
-20210201 react-router and firebase login logout functionality
+20210131 react-router and firebase login logout functionality
 
 ```
   //使用ユーザーがすでに認証をしているかをチェック
@@ -25,3 +25,5 @@
        })
    };
 ```
+
+20210201 editor and preview layout flex-grow の理解
