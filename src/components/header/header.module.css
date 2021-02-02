@@ -11,6 +11,10 @@
   margin-top: 1em;
 }
 
+.title {
+  color: makerWhite;
+}
+
 img {
   width: 3em;
 }
@@ -20,8 +24,7 @@ img {
   right: 1em;
   font-size: 0.5em;
   outline: 0;
-  margin: 0.1rem;
   background-color: transparent;
   border: 2px solid makerWhite;
-  border-radius: 10px;
+  border-radius: 2em;
 }

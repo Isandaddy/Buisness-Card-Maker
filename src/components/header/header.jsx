@@ -9,7 +9,7 @@ const Header = ({onLogout}) => {
             <div className={styles.logo}>
                 <img src="./images/logo.png" alt="logo"/>
             </div>
-            <h1>Buisness Card Maker</h1>
+            <h1 className={styles.title}>Buisness Card Maker</h1>
         </header>
     )
 };

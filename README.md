@@ -26,4 +26,5 @@
    };
 ```
 
-20210201 editor and preview layout flex-grow の理解
+20210201 editor and preview layout flex-grow の理解  
+20210202 add card and edit css

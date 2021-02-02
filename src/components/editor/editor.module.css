@@ -1,9 +1,10 @@
 @value makerGreen from '../../common/colors.css';
 
 .editor {
-  flex-grow: 1;
-  text-align: center;
-  border-right: 0.1em solid makerGreen;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  align-items: center;
 }
 
 .title {

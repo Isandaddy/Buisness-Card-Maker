@@ -16,7 +16,6 @@
   background-color: makerWhite;
   flex-grow: 1;
   display: flex;
-  justify-content: space-around;
 }
 
 @media screen and (max-width: mediaQuery) {
