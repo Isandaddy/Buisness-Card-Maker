@@ -1,14 +1,12 @@
 @value makerGreen from '../../common/colors.css';
 
 .preview {
-  display: flex;
-  flex-direction: column;
   flex-basis: 50%;
-  align-items: center;
-  background-color: yellow;
 }
 
 .title {
+  width: 100%;
+  text-align: center;
   margin-bottom: 1em;
   color: makerGreen;
 }

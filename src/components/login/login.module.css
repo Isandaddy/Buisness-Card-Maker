@@ -1,10 +1,5 @@
 @value makerGreen, makerWhite, makerBlack, makerLightPink from '../../common/colors.css';
 
-h1 {
-  color: makerWhite;
-  margin: 0.5em;
-}
-
 ul {
   display: flex;
   flex-direction: column;
