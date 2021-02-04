@@ -28,4 +28,5 @@
 
 20210201 editor and preview layout flex-grow の理解  
 20210202 add card and edit css  
-20210203 edit card-form css
+20210203 edit card-form css  
+20210204 add card-add-form state の流れ確認する事覚えよう

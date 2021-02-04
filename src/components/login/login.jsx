@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './login.module.css';
 import Header from '../header/header';
 import Footer from '../footer/footer';
@@ -36,7 +36,7 @@ function Login({ authService }) {
             <Header/>
             <section className={styles.middle}>
                 <h1 className={styles.middleTitle}>Login</h1>
-                <ul>
+                <ul className={styles.contain}>
                     <li>
                         <Link to='/app'>
                             <button className={styles.loginButton} onClick={ onLogin }>Google</button>

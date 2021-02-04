@@ -1,6 +1,6 @@
 @value makerGreen, makerWhite, makerBlack, makerLightPink from '../../common/colors.css';
 
-ul {
+.contain {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -22,7 +22,7 @@ li {
   border-radius: 10px;
 }
 
-button:hover {
+.loginButton:hover {
   background-color: makerLightPink;
 }
 

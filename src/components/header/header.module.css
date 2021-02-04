@@ -18,6 +18,7 @@
 img {
   width: 3em;
 }
+
 .logout {
   position: absolute;
   top: 0.5em;
@@ -27,4 +28,9 @@ img {
   background-color: transparent;
   border: 2px solid makerWhite;
   border-radius: 2em;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: makerWhite;
 }

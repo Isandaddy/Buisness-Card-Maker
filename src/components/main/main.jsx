@@ -42,6 +42,7 @@ const Main = ({ authService }) => {
       fileURL: 'lill.png'
     },
   ]);
+
     const history = useHistory();
     const onLogout = () => {
         authService.logout();
@@ -55,11 +56,16 @@ const Main = ({ authService }) => {
         });
     });
 
+    const addCard = (card) => {
+      const updated = [...cards, card];
+      setCards(updated);
+    };
+
     return (
       <section className={styles.main}>
         <Header className={styles.header} onLogout={onLogout}/>
           <div className={styles.mainContain}>
-            <Editor cards={cards}/>
+            <Editor cards={cards} addCard={addCard}/>
             <Preview cards={cards}/>    
           </div>    
         <Footer className={styles.footer}/>
