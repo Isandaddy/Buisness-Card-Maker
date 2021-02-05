@@ -29,4 +29,7 @@
 20210201 editor and preview layout flex-grow の理解  
 20210202 add card and edit css  
 20210203 edit card-form css  
-20210204 add card-add-form state の流れ確認する事覚えよう
+20210204 add card-add-form state の流れ確認する事覚えよう  
+20210205 state の量が多くなると map()で回しながら処理を行うことにして、性能面でよくない為、Object{'key' : value}形式で管理　　　
+その key に対する要素に素早く接近する。 　　　
+-(computed property の参照)[https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer]
