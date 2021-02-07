@@ -8,17 +8,17 @@ import {
   Route,
 } from "react-router-dom";
 
-function App( { authService } ) {
+function App( { FileInput, authService } ) {
 
   return (
-    <div className={styles.app}>
+    <div className={ styles.app }>
       <Router>
         <Switch>
           <Route exact path='/'>
-            <Login authService={authService}/>
+            <Login authService={ authService }/>
           </Route>
           <Route path='/main'>
-              <Main authService={authService}/>
+              <Main authService={ authService } FileInput={ FileInput } />
           </Route>
         </Switch>
       </Router>

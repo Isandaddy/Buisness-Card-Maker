@@ -33,3 +33,16 @@
 20210205 state の量が多くなると map()で回しながら処理を行うことにして、性能面でよくない為、Object{'key' : value}形式で管理　　　
 その key に対する要素に素早く接近する。 　　　
 -(computed property の参照)[https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer]
+
+20210207 数多い props がある場合末端にある component までいちいち props を追記するのはだるいことと  
+props 拡張性の為、外部から component を injection する。
+
+```
+const FileInput = props => (<ImageFileInput {...props} imageUploader={imageUploader}/>)
+
+const CardAddForm = ({ FileInput, onAdd }) => {
+
+<div className={styles.fileInput}>
+                <FileInput />
+</div>
+```

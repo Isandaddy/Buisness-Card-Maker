@@ -3,7 +3,7 @@ import styles from './card_add_form.module.css';
 import Button from '../button/button';
 import ImageFileInput from '../image_file_input/imageFileInput';
 
-const CardAddForm = ({ onAdd }) => {
+const CardAddForm = ({ FileInput, onAdd }) => {
 
     const formRef = useRef();
     const nameRef = useRef();
@@ -42,7 +42,7 @@ const CardAddForm = ({ onAdd }) => {
             <input ref={emailRef} className={styles.input} type="text" name='email' placeholder='email'/>
             <textarea ref={messageRef} className={styles.textarea} name="message" placeholder='message'></textarea>
             <div className={styles.fileInput}>
-                <ImageFileInput />
+                <FileInput />
             </div>
             <Button className={styles.button} name='Add' onClick={onSubmit}/>
         </form>

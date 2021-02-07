@@ -6,7 +6,7 @@ import styles from './main.module.css';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
 
-const Main = ({ authService }) => {
+const Main = ({ FileInput, authService }) => {
   const [cards, setCards] = useState({
     '1' : {
       id: 1,
@@ -66,7 +66,6 @@ const Main = ({ authService }) => {
       });
     };
     const deleteCard = (card) => {
-      
       setCards(cards => {
         const updated = {...cards};
         delete updated[card.id];
@@ -78,7 +77,7 @@ const Main = ({ authService }) => {
       <section className={styles.main}>
         <Header className={styles.header} onLogout={onLogout}/>
           <div className={styles.mainContain}>
-            <Editor cards={cards} addCard={createOrUpdateCard} updateCard={createOrUpdateCard} deleteCard={deleteCard}/>
+            <Editor FileInput={ FileInput } cards={cards} addCard={createOrUpdateCard} updateCard={createOrUpdateCard} deleteCard={deleteCard}/>
             <Preview cards={cards}/>    
           </div>    
         <Footer className={styles.footer}/>
