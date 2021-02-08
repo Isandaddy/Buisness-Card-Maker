@@ -46,3 +46,7 @@ const CardAddForm = ({ FileInput, onAdd }) => {
                 <FileInput />
 </div>
 ```
+
+20210208 edit ImageFileInput cloudinary uploadAPI を用いてイメージファイルをアップロードしそれに関するデーターを return 画面に反映する。
+-ref  
+(input file について)[https://developer.mozilla.org/ko/docs/Web/HTML/Element/input/file#attr-accept]

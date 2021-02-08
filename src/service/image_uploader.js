@@ -1,7 +1,9 @@
 class ImageUploader {
     //Userにファイルを引数でもらってサーバーにアップロードしURLをレタンする
-    async imgUpload() {
+    async uploder(file) {
         const formData = new FormData();
+        formData.append('file', file);
+        formData.append("upload_preset", "docs_upload_example_us_preset" );
         try {
             const response = await fetch("https://api.cloudinary.com/v1_1/demo/image/upload", {
                 method: "POST",
