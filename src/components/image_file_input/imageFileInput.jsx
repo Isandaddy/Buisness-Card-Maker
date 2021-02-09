@@ -15,22 +15,23 @@ const ImageFileInput = ({imageUploader, name, onFileChange}) => {
     const onChange = async (event) => {
         setLoading(true);
         //fileをアップロードしに転送
-        const uploaded = await imageUploader.uploder(event.target.files[0]);//
-        console.log(uploaded);
+        const uploaded = await imageUploader.uploder(event.target.files[0]);
+        setLoading(false);
         onFileChange({
             name: uploaded.original_filename,
             url: uploaded.url,
         })
-        setLoading(false);
+        
     };
 
     return (
         <div className={styles.contain}>
             <input ref={inputRef} className={styles.input} type="file" accept="image/*" name='file' onChange={onChange} />
             {/* inputをcssで操作する事が難しいためbuttonで操作しクリックする効果を得る */}
-            <button className={styles.button} onClick={onButtonClick}>
-                {loading ? 'loading...' :name || 'No File'}
-            </button>
+            {!loading && (<button className={`${styles.button} ${name ? styles.pink : styles.gray}`} onClick={onButtonClick}>
+                {name || 'No File'}
+            </button>)}
+            {loading && <div className={styles.loading}></div>}
         </div>
     );
 }
