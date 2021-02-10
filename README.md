@@ -5,6 +5,10 @@
 [cloudnary](https://cloudinary.com/) イメージ編集 API  
 [react-router](https://reactrouter.com/web/guides/quick-start)
 
+- service ロジックを分離すること
+- 理解出来なかったところ集中して理解するまで見ること
+- 꾸준히 하기
+
 20210126 login 画面土台作成  
 20210127 .env ファイル追加で環境キーをを変数化し gitignore に追加 firebase のセットアップ使い分けし service フォルダ格納  
 20210128 componet 別で分ける事  
@@ -52,3 +56,7 @@ const CardAddForm = ({ FileInput, onAdd }) => {
 (input file について)[https://developer.mozilla.org/ko/docs/Web/HTML/Element/input/file#attr-accept]  
 20210209 add loading spinner for imagefile  
 (css animation)[https://developer.mozilla.org/ko/docs/Web/CSS/animation]
+
+20210210 realtime database 適用  
+-ref  
+(firebase database)[https://firebase.google.com/docs/database/web/read-and-write?authuser=0]

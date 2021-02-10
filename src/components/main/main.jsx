@@ -5,44 +5,14 @@ import { useHistory } from "react-router-dom";
 import styles from './main.module.css';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
+import userEvent from '@testing-library/user-event';
 
-const Main = ({ FileInput, authService }) => {
-  const [cards, setCards] = useState({
-    '1' : {
-      id: 1,
-      name: 'cho',
-      company: 'adecco',
-      theme: 'dark',
-      title: 'Software Engineer',
-      email: 'jjj@gmail.com',
-      message: 'go go go',
-      fileName: 'cho',
-      fileURL: null
-    },
-    '2' : {
-      id: 2,
-      name: 'kim',
-      company: 'adecco',
-      theme: 'colorful',
-      title: 'Software Engineer',
-      email: 'sssj@gmail.com',
-      message: 'go go go',
-      fileName: 'kim',
-      fileURL: 'kim.png'
-    },
-    '3' : {
-      id: 3,
-      name: 'lill',
-      company: 'adecco',
-      theme: 'light',
-      title: 'Software Engineer',
-      email: 'jcoco@gmail.com',
-      message: 'go go go',
-      fizleName: 'lill',
-      fileURL: 'lill.png'
-    },
-  }
-  );
+//cardがupdateになる旅にcardRepositoryを使用
+//user IDを識別子として使用
+const Main = ({ FileInput, authService, cardRepository }) => {
+  const historyState = useHistory().state;
+  const [cards, setCards] = useState({});
+  const [userId, setUserId] =useState(historyState && historyState.id);
 
     const history = useHistory();
     const onLogout = () => {
@@ -51,8 +21,11 @@ const Main = ({ FileInput, authService }) => {
 
     useEffect(() => {
         authService.onAuthChange((user) => {
-        if(!user) {
-            history.push('/')
+        if(user) {
+            setUserId(user.uid);
+        }
+        else {
+          history.push('/')
         }
         });
     });
@@ -64,6 +37,8 @@ const Main = ({ FileInput, authService }) => {
         updated[card.id] = card;
         return updated;
       });
+
+      cardRepository.saveCard(userId, card);
     };
     const deleteCard = (card) => {
       setCards(cards => {
@@ -71,6 +46,8 @@ const Main = ({ FileInput, authService }) => {
         delete updated[card.id];
         return updated;
       });
+
+      cardRepository.removeCard(userId, card);
     };
 
     return (

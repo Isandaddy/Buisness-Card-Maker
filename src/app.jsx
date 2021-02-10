@@ -8,7 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 
-function App( { FileInput, authService } ) {
+function App( { FileInput, authService, cardRepository } ) {
 
   return (
     <div className={ styles.app }>
@@ -18,7 +18,7 @@ function App( { FileInput, authService } ) {
             <Login authService={ authService }/>
           </Route>
           <Route path='/main'>
-              <Main authService={ authService } FileInput={ FileInput } />
+              <Main authService={ authService } FileInput={ FileInput } cardRepository={ cardRepository } />
           </Route>
         </Switch>
       </Router>
