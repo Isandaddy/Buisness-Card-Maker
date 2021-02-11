@@ -9,12 +9,12 @@ class AuthService {
     };
 
     logout() {
-        firebase.auth().signOut();
+        firebaseApp.auth().signOut();
     };
 
     //使用ユーザーがすでに認証をしているかをチェック
     onAuthChange(onUserChanged) {
-        firebase.auth().onAuthStateChanged((user)=>{
+        firebaseApp.auth().onAuthStateChanged((user)=>{
             onUserChanged(user);
         })
     };

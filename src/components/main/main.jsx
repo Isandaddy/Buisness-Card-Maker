@@ -19,6 +19,7 @@ const Main = ({ FileInput, authService, cardRepository }) => {
         authService.logout();
     }
 
+    //login関連
     useEffect(() => {
         authService.onAuthChange((user) => {
         if(user) {
@@ -29,6 +30,18 @@ const Main = ({ FileInput, authService, cardRepository }) => {
         }
         });
     });
+
+    //がマウントされた時、利用者の ID が変形された時
+    useEffect(() => {
+      if(!userId){
+        return;
+      }
+      const stopSync = cardRepository.syncCards(userId, (cards) => {
+        setCards(cards);
+      })
+      //unmount（componentがもう見えない時）された時
+      return () => stopSync();    
+    },[userId])
 
     const createOrUpdateCard = (card) => {
       

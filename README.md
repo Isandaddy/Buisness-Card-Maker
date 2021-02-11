@@ -60,3 +60,6 @@ const CardAddForm = ({ FileInput, onAdd }) => {
 20210210 realtime database 適用  
 -ref  
 (firebase database)[https://firebase.google.com/docs/database/web/read-and-write?authuser=0]
+
+20210211 syncCards main component がマウントされた時、利用者の ID が変形された時 sync する。　　　
+useEffect は状況に応じて複数作成可能
