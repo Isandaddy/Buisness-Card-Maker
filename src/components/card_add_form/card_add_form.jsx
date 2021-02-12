@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styles from './card_add_form.module.css';
 import Button from '../button/button';
-import ImageFileInput from '../image_file_input/imageFileInput';
 
 const CardAddForm = ({ FileInput, onAdd }) => {
 

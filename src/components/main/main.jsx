@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import styles from './main.module.css';
 import Editor from '../editor/editor';
 import Preview from '../preview/preview';
-import userEvent from '@testing-library/user-event';
 
 //cardがupdateになる旅にcardRepositoryを使用
 //user IDを識別子として使用
@@ -29,7 +28,7 @@ const Main = ({ FileInput, authService, cardRepository }) => {
           history.push('/')
         }
         });
-    });
+    }, [authService, history]);
 
     //がマウントされた時、利用者の ID が変形された時
     useEffect(() => {
@@ -41,7 +40,7 @@ const Main = ({ FileInput, authService, cardRepository }) => {
       })
       //unmount（componentがもう見えない時）された時
       return () => stopSync();    
-    },[userId])
+    },[userId, cardRepository])
 
     const createOrUpdateCard = (card) => {
       

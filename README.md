@@ -63,3 +63,12 @@ const CardAddForm = ({ FileInput, onAdd }) => {
 
 20210211 syncCards main component がマウントされた時、利用者の ID が変形された時 sync する。　　　
 useEffect は状況に応じて複数作成可能
+
+20210212 firebase を必要に応じて分ける.
+
+```
+  export const firebaseAuth = firebaseApp.auth();
+  export const firebaseDatabase = firebaseApp.database();
+  export const googleProvider = new firebase.auth.GithubAuthProvider();
+  export const githubProvider = new firebase.auth.GithubAuthProvider();
+```

@@ -29,7 +29,7 @@ function Login({ authService }) {
         authService.onAuthChange(user => {
             user && gotoMain(user.uid)
         });
-    }, []);
+    }, [authService, gotoMain]);
 
     return (
         <section className={styles.login}>

@@ -1,23 +1,34 @@
-import firebase from 'firebase';
-import firebaseApp from './firebase';
+import { firebaseAuth, githubProvider, googleProvider } from './firebase';
+
 
 //認証に関連するクラス
 class AuthService {
     login(providerName) {
-        const authProvider = new firebase.auth[`${providerName}AuthProvider`]();
-        return firebaseApp.auth().signInWithPopup(authProvider);
+        const authProvider = this.getProvider(providerName);
+        return firebaseAuth.signInWithPopup(authProvider);
     };
 
     logout() {
-        firebaseApp.auth().signOut();
+        firebaseAuth.signOut();
     };
 
     //使用ユーザーがすでに認証をしているかをチェック
     onAuthChange(onUserChanged) {
-        firebaseApp.auth().onAuthStateChanged((user)=>{
+        firebaseAuth.onAuthStateChanged((user)=>{
             onUserChanged(user);
         })
     };
+
+    getProvider(providerName) {
+        switch(providerName) {
+            case 'Google':
+                return googleProvider;
+            case 'Github':
+                return githubProvider;
+                default :
+                throw new Error(`not supported provider ${providerName}`);    
+        }
+    }
     
 }
 
