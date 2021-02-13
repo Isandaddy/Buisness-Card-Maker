@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { useHistory } from "react-router-dom";
@@ -14,9 +14,9 @@ const Main = ({ FileInput, authService, cardRepository }) => {
   const [userId, setUserId] =useState(historyState && historyState.id);
 
     const history = useHistory();
-    const onLogout = () => {
-        authService.logout();
-    }
+    const onLogout = useCallback(() => {
+      authService.logout();
+  },[authService]);
 
     //login関連
     useEffect(() => {

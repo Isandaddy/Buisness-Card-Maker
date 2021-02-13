@@ -72,3 +72,12 @@ useEffect は状況に応じて複数作成可能
   export const googleProvider = new firebase.auth.GithubAuthProvider();
   export const githubProvider = new firebase.auth.GithubAuthProvider();
 ```
+
+20210213 最適化  
+main.js で定義されている onLogout は header で props で渡す為、main.js がレンダリングされた時 onLogout を再定義する問題、logout 以外に最初一回だけ定義された onLogout 関数を使うには useCallback を使用
+
+```
+const onLogout = useCallback(() => {
+      authService.logout();
+  },[authService]);
+```

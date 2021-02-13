@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import styles from './imageFileInput.module.css';
 
 
 //利用者から名前をもらう imageがアップロードされたら更新してくれるコールバック
-const ImageFileInput = ({imageUploader, name, onFileChange}) => {
+const ImageFileInput = memo(({imageUploader, name, onFileChange}) => {
     const inputRef = useRef();
     const onButtonClick = (event) => {
         event.preventDefault();
@@ -34,6 +34,6 @@ const ImageFileInput = ({imageUploader, name, onFileChange}) => {
             {loading && <div className={styles.loading}></div>}
         </div>
     );
-}
+});
 
 export default ImageFileInput;
